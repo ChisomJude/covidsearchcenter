@@ -12,7 +12,7 @@
 		
       <form action="" method="POST" > 
         <fieldset>
-          <legend>FIND A COVID CENTER NEAR YOU</legend>
+          <legend>GET YOUR PVC< FIND A CENTER NEAR YOU</legend>
         </fieldset>
         <div class="inner-form">
           <div class="left">
@@ -27,8 +27,8 @@
                 <label>CENTER TYPE</label>
                 <div class="input-select">
                   <select data-trigger="" name="centertpe">
-                    <option value="Vaccine"> Vacinnation Center</option>
-                    <option value = "Test"> Test Center</option>
+                    <option value="New Reg"> New Registration</option>
+                    <option value = "UpdatePVC"> Update PVC </option>
                   </select>
                 </div>
               </div>
@@ -97,7 +97,7 @@
 		</table>
 	<?php } #close if of testcenter
 			else{
-				echo "<h3> Vacination Centers are not yet Available on our Website. Please check back soon </h3>";
+				echo "<h3> Some Centers are not yet Available on this Website. Please check back soon </h3>";
 			 }
 	}?>	
 </form>
@@ -106,7 +106,7 @@
 	  <footer> 
 		<div align="Center">
 		  <marquee behavior="" direction="left">
-			<h4>Design  By Chisom Jude for ALC <small>Frontend template by Colorlib, Content extracted from NCDC Website</small></h4>
+			<h4>Design  By Chisom Jude for SCA Project <small>Frontend template by Colorlib, Contents arent Real</small></h4>
 		  </marquee>
 		</div>
 	  </footer>
