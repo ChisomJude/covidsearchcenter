@@ -33,6 +33,7 @@ if($querythis === false){
 
 }else{
 
+
     $myquery2= "
         INSERT INTO dbo.ineccenters  VALUES (1, 'Ikeja','Mainland','IKEJA INEC OFFICE, 2, OBAFEMI AWOLOWO WAY, IKEJA, LAGOS','Registration'); 
         INSERT INTO dbo.ineccenters  VALUES (2, 'Ogudu','Mainland','KOSOFE INEC OFFICE, 1, MOSHALASI CRESCENT, OGUDU, LAGOS','Registration'); 
@@ -50,4 +51,7 @@ if($querythis === false){
 
 
     }
+}else{
+    echo "No connection Established";
+}
     ?>
