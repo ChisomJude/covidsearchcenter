@@ -38,7 +38,7 @@ if($querythis === false){
         INSERT INTO dbo.ineccenters  VALUES (2, 'Ogudu','Mainland','KOSOFE INEC OFFICE, 1, MOSHALASI CRESCENT, OGUDU, LAGOS','Registration'); 
         INSERT INTO dbo.ineccenters  VALUES (3, 'Ibeju-Lekki','Island','IBEJU-LEKKI INEC OFFICE, LEKKI FREE TRADE ZONE ROAD','Registration'); 
         INSERT INTO dbo.ineccenters  VALUES (4, 'IKOYI','Island','TAFAWA BALEWA SQUARE, LAGOS ISLAND','Registration'); 
-        INSERT INTO dbo.ineccenters  VALUES (5, 'Ikorodu','Mainland','IKORODU INEC OFFICE, TOS BENSON ROAD GRA 1, IKORODU, LAGOS','Registration'); 
+        INSERT INTO dbo.ineccenters  VALUES (5, 'Ikorodu','Mainland','IKORODU INEC OFFICE, TOS BENSON ROAD GRA 1, IKORODU, LAGOS','Registration and Update'); 
         ";
     $querythis = sqlsrv_query($conn,$myquery);
     if($querythis === false){

@@ -34,7 +34,7 @@
               </div>
             </div>
           </div>
-          <input class="btn-search" type="submit" name="sbtn">SEARCH</button>
+          <input class="btn-search" type="submit" name="sbtn" value="SEARCH">
         </div>
 
 	<?php
