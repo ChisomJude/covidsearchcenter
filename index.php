@@ -12,22 +12,22 @@
 		
       <form action="" method="POST" > 
         <fieldset>
-          <legend>GET YOUR PVC< FIND A CENTER NEAR YOU</legend>
+          <legend>GET YOUR PVC, FIND A CENTER NEAR YOU</legend>
         </fieldset>
         <div class="inner-form">
           <div class="left">
             <div class="input-wrap first">
               <div class="input-field first">
                 <label>LOCATION</label>
-                <input type="text" name= "location" placeholder="ex: Lagos mainland, Victoria Island" />
+                <input type="text" name= "location" placeholder="ex: Mainland, Island" />
               </div>
             </div>
             <div class="input-wrap second">
               <div class="input-field second">
                 <label>CENTER TYPE</label>
                 <div class="input-select">
-                  <select data-trigger="" name="centertpe">
-                    <option value="New Reg"> New Registration</option>
+                  <select data-trigger="" name="centertype">
+                    <option value="Registration"> New Registration</option>
                     <option value = "UpdatePVC"> Update PVC </option>
                   </select>
                 </div>
@@ -37,59 +37,44 @@
           <input class="btn-search" type="submit" name="sbtn">SEARCH</button>
         </div>
 
-	<?php 
+	<?php
+		require_once ('db.php'); 
+		
 	    if(isset($_POST['sbtn'])){
 		$location = $_POST['location'];
 		$centertype = $_POST['centertype'];
 	    if($centertype = 'test'){
 
-		// PHP Data Objects(PDO) Sample Code:
-		try {
-			$conn = new PDO("sqlsrv:server = tcp:covidesearchapp.mysql.database.azure.com,1433; Database = covidsearchapp", "chisomjude", "{your_password_here}");
-			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		}
-		catch (PDOException $e) {
-			print("Error connecting to SQL Server.");
-			die(print_r($e));
-		}
-
-		// SQL Server Extension Sample Code:
-		$connectionInfo = array("UID" => "chisomjude", "pwd" => "Favoured0205", "Database" => "covidsearchapp", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-		$serverName = "tcp:covidesearchapp.mysql.database.azure.com,1433";
-		$conn = sqlsrv_connect($serverName, $connectionInfo);
-
 
        # Start form processing if test center
 
-		$sqlquery = "SELECT * FROM covidcenter WHERE center_location ='Lagos, Mainland' ";
-		$sqlquery = mysqli_query($conn, $sqlquery);
+		$sqlquery = "SELECT * FROM dbo.ineccenters WHERE center_location = '$location' ";
+		$sqlquery = sqlsrv_query($conn, $sqlquery);
 		?>
 
 		<table>
 			<thead>
-				<th>Search Result for </th>
+				<th>Search Result for <?php $location."centers"?> </th>
 			</thead>
 			<tbody> 
 			<tr>
 					<td>Id</td>
 					<td>Center Name </td>
 					<td>Center Location and Address</td>
-					<td>Contact </td>
 					<td>Center Type</td>
 					
 			</tr>
 				<?php
-				while ($data = mysqli_fetch_row($sqlquery)
+				while ($data = sqlsrv_fetch_array($sqlquery)
 				){
 					$x = 0;
 					$x++
 					?>
 				<tr>
 					<td><?php echo $x; ?></td>
-					<td><?php echo $data['center_name'] ?></td>
-					<td><?php echo $data['center_location']. "<br>" . $data['center_address'] ?></td>
-					<td><?php echo $data['center_contact'] ?></td>
-					<td><?php echo $data['center_type'] ?></td>
+					<td><?php echo $data['centername'] ?></td>
+					<td><?php echo $data['centerlocation']. "<br>" . $data['centeraddress'] ?></td>
+					<td><?php echo $data['centertype'] ?></td>
 				</tr>
 					<?php }?>
 				
@@ -97,7 +82,7 @@
 		</table>
 	<?php } #close if of testcenter
 			else{
-				echo "<h3> Some Centers are not yet Available on this Website. Please check back soon </h3>";
+				echo "<h3> Some locations and centers are not yet Available on this Website. Please check back soon </h3>";
 			 }
 	}?>	
 </form>
@@ -106,7 +91,8 @@
 	  <footer> 
 		<div align="Center">
 		  <marquee behavior="" direction="left">
-			<h4>Design  By Chisom Jude for SCA Project <small>Frontend template by Colorlib, Contents arent Real</small></h4>
+			<h4>Design  By Chisom Jude for SCA Project <small>Frontend template by Colorlib, Contents extracted from 
+				<a href="https://locator.inecnigeria.org/locator/browse" title=" Inec Website">INEC Website</a></small></h4>
 		  </marquee>
 		</div>
 	  </footer>
