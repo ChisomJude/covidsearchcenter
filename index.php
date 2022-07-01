@@ -87,7 +87,7 @@
 				echo "<h3> Update and Pick up locations are not available yet! </h3>";
 			 }
 	}
-	      */
+	      
 	      ?>	
 </form>
       
