@@ -41,7 +41,11 @@
 		 
 		
 	    if(isset($_POST['sbtn'])){
-			require_once ('db.php');
+		    $location = $_POST['location'];
+		    $centertype = $_POST['centertype'];
+		    
+		    echo $location. " " . $centertype;
+			/*require_once ('db.php');
 				$location = $_POST['location'];
 				$centertype = $_POST['centertype'];
 	    
@@ -86,7 +90,9 @@
 			else{
 				echo "<h3> Update and Pick up locations are not available yet! </h3>";
 			 }
-	}?>	
+	}
+	      */
+	      ?>	
 </form>
       
 	  </div>
