@@ -54,7 +54,7 @@
 			$sqlquery = sqlsrv_query($conn, $sqlquery);
 			?>
 
-			<table>
+			<table class="table table-dark" >
 			<thead>
 				<th>Search Results for <?php $location." centers" ; ?> </th>
 			</thead>
