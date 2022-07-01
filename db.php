@@ -29,7 +29,7 @@ $myquery = "IF OBJECT_ID('dbo.ineccenters','U') IS NOT NULL
 $querythis = sqlsrv_query($conn,$myquery);
 if($querythis === false){
     echo 'Error Executing queries - Could not create tables <br/>';
-    die (print_r(sqlsrv_errors(),true))
+    die (print_r(sqlsrv_errors(),true));
 
 }else{
 
@@ -44,7 +44,7 @@ if($querythis === false){
     $querythis = sqlsrv_query($conn,$myquery);
     if($querythis === false){
             echo 'Error Executing queries - Could not Insert Data <br/>';
-            die (print_r(sqlsrv_errors(),true))
+            die (print_r(sqlsrv_errors(),true));
         
     }
 
