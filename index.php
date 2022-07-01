@@ -68,9 +68,10 @@
 					
 			</tr>
 				<?php
+				$x = 0;
 				while ($data = sqlsrv_fetch_array($sqlquery)
 				){
-					$x = 0;
+					
 					$x++
 					?>
 				<tr>
@@ -96,8 +97,8 @@
 	  <footer> 
 		<div align="Center">
 		  <marquee behavior="" direction="left">
-			<h4>Design  By Chisom Jude for SCA Project <small>Frontend template by Colorlib, Contents extracted from 
-				<a href="https://locator.inecnigeria.org/locator/browse" title=" Inec Website">INEC Website</a></small></h4>
+			<h6>Design  By Chisom Jude for SCA Project <small>Frontend template by Colorlib, Contents extracted from 
+				<a href="https://locator.inecnigeria.org/locator/browse" title=" Inec Website">INEC Website</a></small></h6>
 		  </marquee>
 		</div>
 	  </footer>
