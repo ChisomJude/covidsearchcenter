@@ -18,7 +18,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 if ($conn){
 $myquery = "IF OBJECT_ID('dbo.ineccenters','U') IS NOT NULL
     	    DROP TABLE dbo.ineccenters
-    	    GO
+    	    
     	    CREATE TABLE dbo.ineccenters (
             id INT NOT NULL   PRIMARY KEY, 
             centername [NVARCHAR](50), 
