@@ -16,7 +16,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 //if connection is successfull, create table and insert records
 if ($conn){
-$myquery = "IF OBJECT_ID('dbo.ineccenters','U') IS NOT NULL
+/* $myquery = "IF OBJECT_ID('dbo.ineccenters','U') IS NOT NULL
     	    DROP TABLE dbo.ineccenters
     	    
     	    CREATE TABLE dbo.ineccenters (
@@ -27,7 +27,7 @@ $myquery = "IF OBJECT_ID('dbo.ineccenters','U') IS NOT NULL
             centertype [NVARCHAR](50)
             );";
 $querythis = sqlsrv_query($conn,$myquery);
-if($querythis === false){
+ if($querythis === false){
     echo 'Error Executing queries - Could not create tables <br/>';
     die (print_r(sqlsrv_errors(),true));
 
@@ -47,10 +47,11 @@ if($querythis === false){
             die (print_r(sqlsrv_errors(),true));
         
     }
-
-
-
     }
+*/
+
+
+   
 }else{
     echo "No connection Established";
 }
