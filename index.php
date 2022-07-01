@@ -41,7 +41,7 @@
 		 
 		
 	    if(isset($_POST['sbtn'])){ 
-		    require_once 'db.php';
+		    include_once 'db.php';
 		    $location = $_POST['location'];
 		    $centertype = $_POST['centertype'];
 		    
