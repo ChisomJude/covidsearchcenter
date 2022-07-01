@@ -44,17 +44,11 @@
 		    include_once 'db.php';
 		    $location = $_POST['location'];
 		    $centertype = $_POST['centertype'];
-		    
-		    echo $location. " " . $centertype;
-	    }
-			/*require_once ('db.php');
-				$location = $_POST['location'];
-				$centertype = $_POST['centertype'];
 	    
 			if($centertype = 'Registration'){
 
 
-       # Start form processing if test center
+       			# Start form processing if test center
 
 			$sqlquery = "SELECT * FROM dbo.ineccenters WHERE center_location = '$location' ";
 			$sqlquery = sqlsrv_query($conn, $sqlquery);
