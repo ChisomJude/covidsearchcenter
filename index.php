@@ -38,21 +38,23 @@
         </div>
 
 	<?php
-		require_once ('db.php'); 
+		 
 		
 	    if(isset($_POST['sbtn'])){
-		$location = $_POST['location'];
-		$centertype = $_POST['centertype'];
-	    if($centertype = 'test'){
+			require_once ('db.php');
+				$location = $_POST['location'];
+				$centertype = $_POST['centertype'];
+	    
+			if($centertype = 'Registration'){
 
 
        # Start form processing if test center
 
-		$sqlquery = "SELECT * FROM dbo.ineccenters WHERE center_location = '$location' ";
-		$sqlquery = sqlsrv_query($conn, $sqlquery);
-		?>
+			$sqlquery = "SELECT * FROM dbo.ineccenters WHERE center_location = '$location' ";
+			$sqlquery = sqlsrv_query($conn, $sqlquery);
+			?>
 
-		<table>
+			<table>
 			<thead>
 				<th>Search Result for <?php $location."centers"?> </th>
 			</thead>
@@ -82,7 +84,7 @@
 		</table>
 	<?php } #close if of testcenter
 			else{
-				echo "<h3> Some locations and centers are not yet Available on this Website. Please check back soon </h3>";
+				echo "<h3> Update and Pick up locations are not available yet! </h3>";
 			 }
 	}?>	
 </form>
