@@ -45,6 +45,7 @@
 		    $centertype = $_POST['centertype'];
 		    
 		    echo $location. " " . $centertype;
+	    }
 			/*require_once ('db.php');
 				$location = $_POST['location'];
 				$centertype = $_POST['centertype'];
