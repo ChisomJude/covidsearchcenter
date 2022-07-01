@@ -50,19 +50,19 @@
 
        			# Start form processing if test center
 
-			$sqlquery = "SELECT * FROM dbo.ineccenters WHERE center_location = '$location' ";
+			$sqlquery = "SELECT * FROM dbo.ineccenters WHERE centerlocation = '$location' ";
 			$sqlquery = sqlsrv_query($conn, $sqlquery);
 			?>
 
 			<table>
 			<thead>
-				<th>Search Result for <?php $location."centers"?> </th>
+				<th>Search Results for <?php $location." centers" ; ?> </th>
 			</thead>
 			<tbody> 
 			<tr>
 					<td>Id</td>
 					<td>Center Name </td>
-					<td>Center Location and Address</td>
+					<td>Center Address </td>
 					<td>Center Type</td>
 					
 			</tr>
